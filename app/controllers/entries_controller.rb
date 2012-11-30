@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = EntryService.all
+    @entries = EntryService.index
     respond_with(@entries)
   end
 
@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
   end
 
   def new
-    @entry = Entry.new
+    @entry = EntryService.new
     respond_with(@entry)
   end
 
@@ -25,14 +25,12 @@ class EntriesController < ApplicationController
   end
 
   def update
-    @entry_service = EntryService.new(params[:id])
-    @entry = @entry_service.update_attributes(params[:entry])
+    @entry = EntryService.update(params[:id], params[:entry])
     respond_with(@entry)
   end
 
   def destroy
-    @entry_service = EntryService.new(params[:id])
-    @entry = @entry_service.destroy
+    @entry = EntryService.destroy(params[:id])
     respond_with(@entry)
   end
 end
