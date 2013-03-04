@@ -1,7 +1,12 @@
-require 'spec_helper'
+#require 'spec_helper'
+require_relative "../../app/services/entry_service"
 
 describe EntryService do
-  let(:entry) { Entry.new }
+  let(:entry) { Object.new }
+
+  before :each do
+    stub_const("Entry", entry)
+  end
 
   describe "#index" do
     before :each do
