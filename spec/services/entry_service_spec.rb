@@ -2,7 +2,7 @@
 require_relative "../../app/services/entry_service"
 
 describe EntryService do
-  let(:entry_class) { Object }
+  let(:entry_class) { Class }
   let(:entry) { Object.new }
 
   before :each do
