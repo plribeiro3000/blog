@@ -2,10 +2,11 @@
 require_relative "../../app/services/entry_service"
 
 describe EntryService do
+  let(:entry_class) { Object }
   let(:entry) { Object.new }
 
   before :each do
-    stub_const("Entry", entry)
+    stub_const("Entry", entry_class)
   end
 
   describe "#index" do
