@@ -1,7 +1,11 @@
 require 'spec_helper'
 
-describe EntriesController do
+describe Admin::EntriesController do
   let(:entry) { Entry.new }
+
+  before :each do
+    authenticate_user!
+  end
 
   describe "#GET index" do
     before :each do
