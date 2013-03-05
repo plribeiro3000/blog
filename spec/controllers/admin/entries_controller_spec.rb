@@ -9,7 +9,7 @@ describe Admin::EntriesController do
 
   describe "#GET index" do
     before :each do
-      EntryService.stub(:index => [entry])
+      subject.stub(:all => [entry])
       get :index
     end
 
@@ -20,7 +20,7 @@ describe Admin::EntriesController do
 
   describe "#GET show" do
     before :each do
-      EntryService.stub(:find).with("1").and_return(entry)
+      subject.stub(:find).with("1").and_return(entry)
       get :show, :id => 1
     end
 
@@ -31,7 +31,7 @@ describe Admin::EntriesController do
 
   describe "#GET new" do
     before :each do
-      EntryService.stub(:new => entry)
+      subject.stub(:build => entry)
       get :new
     end
 
@@ -42,7 +42,7 @@ describe Admin::EntriesController do
 
   describe "#GET edit" do
     before :each do
-      EntryService.stub(:find).with("1").and_return(entry)
+      subject.stub(:find).with("1").and_return(entry)
       get :edit, :id => 1
     end
 
@@ -53,7 +53,7 @@ describe Admin::EntriesController do
 
   describe "#POST create" do
     before :each do
-      EntryService.stub(:create).with({}).and_return(entry)
+      subject.stub(:generate).with({}).and_return(entry)
       post :create, :entry => {}
     end
 
@@ -64,7 +64,7 @@ describe Admin::EntriesController do
 
   describe "#PUT update" do
     before :each do
-      EntryService.stub(:find).with("1").and_return(entry)
+      subject.stub(:find).with("1").and_return(entry)
       entry.stub(:update_attributes => true)
       put :update, :id => 1, :entry => {}
     end
@@ -76,7 +76,7 @@ describe Admin::EntriesController do
 
   describe "#DELETE destroy" do
     before :each do
-      EntryService.stub(:find).with("1").and_return(entry)
+      subject.stub(:find).with("1").and_return(entry)
       entry.stub(:destroy => true)
       delete :destroy, :id => 1
     end

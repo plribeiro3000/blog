@@ -1,32 +1,34 @@
 class Admin::EntriesController < Admin::AuthorizedController
+  include EntryService
+
   def index
-    @entries = EntryService.index
+    @entries = all
   end
 
   def show
-    @entry = EntryService.find(params[:id])
+    @entry = find(params[:id])
   end
 
   def new
-    @entry = EntryService.new
+    @entry = build
   end
 
   def edit
-    @entry = EntryService.find(params[:id])
+    @entry = find(params[:id])
   end
 
   def create
-    @entry = EntryService.create(params[:entry])
+    @entry = generate(params[:entry])
     respond_with('admin', @entry)
   end
 
   def update
-    @entry = EntryService.update(params[:id], params[:entry])
+    @entry = modify(params[:id], params[:entry])
     respond_with('admin', @entry)
   end
 
   def destroy
-    @entry = EntryService.destroy(params[:id])
+    @entry = delete(params[:id])
     respond_with('admin', @entry)
   end
 end

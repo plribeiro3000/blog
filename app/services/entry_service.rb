@@ -1,27 +1,30 @@
 module EntryService
-  def self.index
+  def all
     Entry.all
   end
 
-  def self.new
+  def build
     Entry.new
   end
 
-  def self.find(id)
+  def find(id)
     Entry.find(id)
   end
 
-  def self.create(entry = {})
-    Entry.create(entry)
-  end
-
-  def self.update(id, entry = {})
-    entry = find(id)
-    entry.update_attributes(entry)
+  def generate(attributes = {})
+    entry = Entry.new(attributes)
+    entry.user = current_user
+    entry.save
     entry
   end
 
-  def self.destroy(id)
+  def modify(id, attributes = {})
+    entry = find(id)
+    entry.update_attributes(attributes)
+    entry
+  end
+
+  def delete(id)
     entry = find(id)
     entry.destroy
     entry
