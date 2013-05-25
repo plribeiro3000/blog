@@ -1,5 +1,5 @@
 class Admin::EntriesController < Admin::AuthorizedController
-  include EntryService
+  include Admin::EntryService
 
   def index
     @entries = all
