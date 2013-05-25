@@ -3,9 +3,5 @@ Blog::Application.routes.draw do
 
   resources :entries
 
-  namespace :admin do
-    resources :entries
-  end
-
   root :to => "root#index"
 end
