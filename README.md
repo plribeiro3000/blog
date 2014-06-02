@@ -1,6 +1,6 @@
 # Blog
 
-[![Build Status](https://secure.travis-ci.org/plribeiro3000/blog.png?branch=master)](http://travis-ci.org/plribeiro3000/blog) [![Code Climate](https://codeclimate.com/github/plribeiro3000/blog.png)](https://codeclimate.com/github/plribeiro3000/blog)
+[![Build Status](https://secure.travis-ci.org/plribeiro3000/blog.png?branch=master)](http://travis-ci.org/plribeiro3000/blog) [![Code Climate](https://codeclimate.com/github/plribeiro3000/blog.png)](https://codeclimate.com/github/plribeiro3000/blog) [![Coverage Status](https://img.shields.io/coveralls/plribeiro3000/blog.svg)](https://coveralls.io/r/plribeiro3000/blog)
 
 This repository is for testing only. It will contain several tests of patterns to use when developing using rails and best practices on testing using rspec.
 In the end, this repo will be an example of best practices and good patterns to use.

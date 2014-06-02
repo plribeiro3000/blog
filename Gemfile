@@ -23,5 +23,6 @@ end
 group :test do
   gem 'spring-commands-rspec'
   gem 'rspec-rails'
-  gem 'shoulda-matchers', :require => false
+  gem 'shoulda-matchers', require: false
+  gem 'coveralls', require: false
 end
