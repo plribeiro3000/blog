@@ -1,7 +1,7 @@
 class UserInteractor < Zertico::Interactor
   def perform(params)
     @user = User.new(params)
-    return fail! unless @user.save
+    fail! unless @user.save
     @user
   end
 

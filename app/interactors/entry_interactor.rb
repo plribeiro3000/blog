@@ -3,7 +3,7 @@ class EntryInteractor < Zertico::Interactor
     @entry = Entry.new
     @entry.title = params[:entry_title]
     @entry.content = params[:entry_content]
-    return fail! unless @entry.save
+    fail! unless @entry.save
     @entry
   end
 end
