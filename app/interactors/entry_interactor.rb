@@ -1,11 +1,9 @@
 class EntryInteractor < Zertico::Interactor
-  def perform(params)
-    @entry = Entry.new(params)
-    @entry.user =  @user
-    @entry.save
-  end
-
-  def rollback
-    @entry.delete
+  def perform(params = nil)
+    @entry = Entry.new
+    @entry.title = params[:entry_title]
+    @entry.content = params[:entry_content]
+    return fail! unless @entry.save
+    @entry
   end
 end
