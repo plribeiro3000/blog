@@ -3,5 +3,7 @@ Blog::Application.routes.draw do
 
   resources :entries
 
+  resources :users, except: [:edit, :update, :show]
+
   root :to => "root#index"
 end
